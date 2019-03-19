@@ -1,4 +1,4 @@
-package com.joshuarodgers.basicanimation;
+package com.joshuarodgers.devstruggle.basicanimation;
 
 // 03/13/2019
 // -
@@ -14,7 +14,7 @@ public class Counter {
     private long elapsedTime;
 
     protected void runCounter() {
-        startTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis();  // initialize startTime for the first iteration
         while(true) {
             currentTime = System.currentTimeMillis();
             elapsedTime += currentTime - startTime;
