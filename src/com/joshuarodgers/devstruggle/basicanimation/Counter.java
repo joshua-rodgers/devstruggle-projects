@@ -16,13 +16,14 @@ public class Counter {
     protected void runCounter() {
         startTime = System.currentTimeMillis();  // initialize startTime for the first iteration
         while(true) {
-            currentTime = System.currentTimeMillis();
-            elapsedTime += currentTime - startTime;
-            startTime = currentTime;   // currentTime from last iteration becomes startTime of the next
-            if(elapsedTime >= 1000) {
+            currentTime = System.currentTimeMillis(); // get the time we started this iteration
+            elapsedTime += currentTime - startTime; // accumulate the time since the first iteration
+            
+            if(elapsedTime >= 1000) { // if 1 second has passed
                 Switch.flip();
-                elapsedTime = 0;
+                elapsedTime = 0; // clear for new second
             }
+            startTime = currentTime;   // currentTime from last iteration becomes startTime of the next
         }
     }
 
